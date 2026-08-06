@@ -22,7 +22,7 @@ export default function App() {
     <div className="min-h-screen bg-transparent font-['Exo_2'] text-gray-800 flex flex-col relative">
       <ScrollAnimation />
       {/* Navbar */}
-      <header className="flex items-center justify-between px-6 py-8 max-w-7xl mx-auto w-full relative z-10">
+      <header className="flex items-center justify-between px-6 py-8 w-full w-full relative z-10">
         <div className="flex items-center">
           {/* Logo */}
           <div className="flex flex-col items-start -mt-2">
@@ -93,7 +93,7 @@ export default function App() {
 {/* ================= HOME PAGE START ================= */}
 {/* Hero Section */}
 {/* ================= HOME PAGE START ================= */}
-       <main className="flex-grow max-w-7xl mx-auto px-6 pt-16 pb-28 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <main className="flex-grow w-full px-6 pt-16 pb-28 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Product Image */}
         <div className="flex justify-center items-center">
              <div className="bg-white/70 backdrop-blur-md p-6 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] border border-white animate-[pulse_4s_ease-in-out_infinite] hover:bg-white/90 transition-colors duration-500">
@@ -121,7 +121,7 @@ export default function App() {
       </main>
 
       {/* Features List */}
-      <section className="max-w-6xl mx-auto px-6 pb-20 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <section className=" w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         <div className="flex flex-col items-center text-center gap-4 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-white hover:-translate-y-1 transition-transform">
           <Boxes className="w-[28px] h-[28px] text-[#004fa3] stroke-[2]" />
           <span className="text-[12px] font-bold text-gray-800 uppercase tracking-wider">Modular in design</span>
@@ -162,7 +162,7 @@ export default function App() {
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#004fa3]/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
         <div className="absolute top-48 -left-24 w-72 h-72 bg-[#49a82e]/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto flex flex-col gap-24">
+        <div className="w-full mx-auto flex flex-col gap-24">
           
           {/* Heading */}
           <div className="text-center flex flex-col items-center">
@@ -414,7 +414,7 @@ export default function App() {
 
       {/* Footer / Bottom Banner */}
       <section className="bg-gradient-to-r from-[#001f40]/90 to-[#003366]/90 backdrop-blur-md text-white py-20 px-6 mt-auto z-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24 items-start pl-0 lg:pl-12">
+        <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24 items-start pl-0 lg:pl-12">
           <div className="flex items-start gap-6">
             <button className="bg-gradient-to-br from-[#004fa3] to-[#49a82e] p-3 rounded-sm mt-2.5 flex-shrink-0 hover:opacity-90 transition-opacity">
               <ArrowDown className="w-5 h-5 text-white" strokeWidth={2} />
