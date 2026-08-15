@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { 
-  Search, Boxes, Droplets, Zap, CircleDollarSign, ArrowDown, Leaf, Fan, 
+  Search, Menu, X, Boxes, Droplets, Zap, CircleDollarSign, ArrowDown, Leaf, Fan,
   CloudFog, Droplet, Wind, ShieldCheck, Quote, 
   CheckCircle2, ChefHat, Utensils, Factory, Settings, AirVent,
   Star, Package, Shield, Settings2, Wrench, ArrowRight,
@@ -13,39 +13,39 @@ import {
 } from 'lucide-react';
 import espCellImage from './assets/images/esp_cell_single_1785694044849.jpg';
 import espInternalDiagram from './assets/images/esp_internal_diagram_transparent.png';
-import espControlUnit from './assets/images/esp_control_unit_transparent.png';
 import airotakeEspImage from './assets/images/airotake_esp_control_unit_1785697340351.jpg';
-import ScrollAnimation from './components/ScrollAnimation';
+import heroKitchenImage from './assets/images/airotake-website-front-page.png';
+
+import logoImage from './assets/images/Logo1.png';
 
 export default function App() {
+  const [mobileMenu, setMobileMenu] = React.useState(false);
   return (
     <div className="min-h-screen bg-transparent font-['Exo_2'] text-gray-800 flex flex-col relative">
-      <ScrollAnimation />
+      
       {/* Navbar */}
       <header className="flex items-center justify-between px-6 py-8 w-full w-full relative z-10">
-        <div className="flex items-center">
-          {/* Logo */}
-          <div className="flex flex-col items-start -mt-2">
-            <div className="text-[36px] font-black tracking-tight flex items-center italic font-['Exo_2']">
-              <span className="text-[#004fa3] uppercase">Air</span>
-              <div className="mx-1 relative flex items-center justify-center rounded-full border-[3px] border-t-[#004fa3] border-l-[#004fa3] border-b-[#49a82e] border-r-[#49a82e] p-0.5 bg-gradient-to-br from-white to-gray-100 shadow-inner">
-                 <Fan className="w-6 h-6 text-gray-700 animate-[spin_4s_linear_infinite]" strokeWidth={2.5} />
-              </div>
-              <span className="text-[#085a21] uppercase bg-gradient-to-b from-[#60c418] to-[#044c21] text-transparent bg-clip-text">Take</span>
-            </div>
-            <div className="text-[9px] font-bold tracking-[0.2em] text-[#0f284f] mt-0.5 text-center w-full flex items-center justify-between font-['Exo_2']">
-              <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent to-[#004fa3] mr-2"></div>
-              ENGINEERED AIR SOLUTIONS
-              <div className="flex-grow h-[1px] bg-gradient-to-l from-transparent to-[#49a82e] ml-2"></div>
-            </div>
-          </div>
-        </div>
-        
+       <div className="flex items-center">
+  {/* Logo */}
+  <img
+    src={logoImage}
+    alt="AiroTAKE - Engineered Air Solutions"
+    className="w-[180px] h-auto object-contain"
+  />
+</div>
+       <button
+  type="button"
+  className="lg:hidden"
+  onClick={() => setMobileMenu(!mobileMenu)}
+>
+  {mobileMenu ? <X size={28} /> : <Menu size={28} />}
+</button>
         <div className="flex flex-col items-end gap-3">
           <div className="hidden lg:flex items-center gap-6 font-bold text-[#004fa3] text-[15px] px-2">
-            <a href="tel:+919999999999" className="hover:opacity-80 transition-opacity">+91 99999 99999</a>
+            <a href="tel:+91 6302 104 702" className="hover:opacity-80 transition-opacity">+91 6302 104 702</a>
             <a href="mailto:info@airotake.com" className="hover:opacity-80 transition-opacity">info@airotake.com</a>
           </div>
+
           <nav className="hidden lg:flex items-center gap-7 bg-white/80 backdrop-blur-md px-6 py-3 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-white">
             <div className="relative group">
               <a href="#" className="text-[14px] font-bold text-gray-800 hover:text-[#004fa3] flex items-center gap-1.5 transition-colors py-2">
@@ -88,37 +88,47 @@ export default function App() {
              </button>
           </div>
         </nav>
+       {mobileMenu && (
+  <div className="lg:hidden absolute top-full left-4 right-4 mt-4 bg-white rounded-2xl shadow-2xl p-6 z-50">
+    {mobileMenu && (
+  <div className="lg:hidden absolute top-full left-4 right-4 mt-4 bg-white rounded-2xl shadow-2xl p-6 z-50">
+    <a href="#" className="block py-3 border-b">Sectors</a>
+    <a href="#" className="block py-3 border-b">Solutions</a>
+    <a href="#" className="block py-3 border-b">Servicing</a>
+    <a href="#" className="block py-3 border-b">About</a>
+    <a href="#" className="block py-3">Contact</a>
+  </div>
+)}
+  </div>
+)}
+    
+
         </div>
       </header>
 {/* ================= HOME PAGE START ================= */}
 {/* Hero Section */}
 {/* ================= HOME PAGE START ================= */}
-      <main className="flex-grow w-full px-6 pt-16 pb-28 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Product Image */}
-        <div className="flex justify-center items-center">
-             <div className="bg-white/70 backdrop-blur-md p-6 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] border border-white animate-[pulse_4s_ease-in-out_infinite] hover:bg-white/90 transition-colors duration-500">
-             <img
-  src={espControlUnit}
-  alt="AIRoTAKE Premium ESP Control Unit"
-  className="w-full max-w-md object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)]"
-/>
-             </div>
-        </div>
+      <section
+        className="relative w-full overflow-hidden"
+        <div className="mx-auto max-w-[1400px] px-6 pt-16 pb-28 grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[750px]">
+          <div className="flex flex-col items-start max-w-xl pl-0 md:pl-12 bg-slate-900/20 backdrop-blur-[1px] p-8 rounded-2xl border border-white/10">
+            <h1 className="text-[48px] font-bold text-[#004fa3] mb-6 drop-shadow-sm">ESP</h1>
+            <p className="text-[16px] text-gray-200 leading-[1.8] mb-6 font-semibold">
+              Our Electrostatic Precipitators or ESPs have been specifically designed for kitchen extract systems and have integral sumps to collect the oil, grease and smoke particles filtered out of the exhaust.
+            </p>
+            <p className="text-[14px] text-gray-200 leading-[1.8] mb-10 font-medium">
+              This not only simplifies servicing but eradicates potentially dangerous spillage from the bottom of the units and greatly cuts down on buildups of grease within the ducting.
+            </p>
+            <button className="bg-gradient-to-r from-[#004fa3] to-[#49a82e] hover:opacity-90 text-white px-8 py-3.5 rounded text-[14px] font-bold transition-opacity shadow-[0_4px_15px_rgba(0,0,0,0.1)]">
+              View the Technical Specification
+            </button>
+          </div>
 
-        {/* Text Content */}
-        <div className="flex flex-col items-start max-w-lg pl-0 md:pl-12 bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-white">
-          <h1 className="text-[48px] font-bold text-[#004fa3] mb-6 drop-shadow-sm">ESP</h1>
-          <p className="text-[16px] text-gray-800 leading-[1.8] mb-6 font-semibold">
-            Our Electrostatic Precipitators or ESPs have been specifically designed for kitchen extract systems and have integral sumps to collect the oil, grease and smoke particles filtered out of the exhaust.
-          </p>
-          <p className="text-[14px] text-gray-700 leading-[1.8] mb-10 font-medium">
-            This not only simplifies servicing but eradicates potentially dangerous spillage from the bottom of the units and greatly cuts down on buildups of grease within the ducting.
-          </p>
-          <button className="bg-gradient-to-r from-[#004fa3] to-[#49a82e] hover:opacity-90 text-white px-8 py-3.5 rounded text-[14px] font-bold transition-opacity shadow-[0_4px_15px_rgba(0,0,0,0.1)]">
-            View the Technical Specification
-          </button>
+          <div className="hidden md:flex justify-center items-center" aria-hidden="true">
+            <div className="w-full max-w-md h-[260px] rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm" />
+          </div>
         </div>
-      </main>
+      </section>
 
       {/* Features List */}
       <section className=" w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -337,7 +347,7 @@ export default function App() {
               </thead>
               <tbody className="text-[14px] text-gray-700">
                 <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ESP 3500</td>
+                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ATESP 3000-4000</td>
                   <td className="py-4 px-6">220/240V 50Hz 1ph</td>
                   <td className="py-4 px-6">50 W</td>
                   <td className="py-4 px-6">1.6 m&sup3;/sec</td>
@@ -345,7 +355,7 @@ export default function App() {
                   <td className="py-4 px-6">45 kg</td>
                 </tr>
                 <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors bg-gray-50/50">
-                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ESP 7000</td>
+                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ATESP 6500-7500</td>
                   <td className="py-4 px-6">220/240V 50Hz 1ph</td>
                   <td className="py-4 px-6">100 W</td>
                   <td className="py-4 px-6">3.2 m&sup3;/sec</td>
@@ -353,7 +363,7 @@ export default function App() {
                   <td className="py-4 px-6">85 kg</td>
                 </tr>
                 <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ESP 10500</td>
+                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ATESP 10000-11000</td>
                   <td className="py-4 px-6">220/240V 50Hz 1ph</td>
                   <td className="py-4 px-6">150 W</td>
                   <td className="py-4 px-6">4.8 m&sup3;/sec</td>
@@ -361,7 +371,7 @@ export default function App() {
                   <td className="py-4 px-6">120 kg</td>
                 </tr>
                 <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors bg-gray-50/50">
-                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ESP 14000</td>
+                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ATESP 13500-14500</td>
                   <td className="py-4 px-6">220/240V 50Hz 1ph</td>
                   <td className="py-4 px-6">200 W</td>
                   <td className="py-4 px-6">6.4 m&sup3;/sec</td>
@@ -369,7 +379,7 @@ export default function App() {
                   <td className="py-4 px-6">160 kg</td>
                 </tr>
                 <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ESP 21000</td>
+                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ATESP 20500-21500</td>
                   <td className="py-4 px-6">220/240V 50Hz 1ph</td>
                   <td className="py-4 px-6">300 W</td>
                   <td className="py-4 px-6">9.6 m&sup3;/sec</td>
@@ -377,7 +387,7 @@ export default function App() {
                   <td className="py-4 px-6">240 kg</td>
                 </tr>
                 <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors bg-gray-50/50">
-                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ESP 28000</td>
+                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ATESP 27500-28500</td>
                   <td className="py-4 px-6">220/240V 50Hz 1ph</td>
                   <td className="py-4 px-6">400 W</td>
                   <td className="py-4 px-6">12.8 m&sup3;/sec</td>
@@ -385,7 +395,7 @@ export default function App() {
                   <td className="py-4 px-6">320 kg</td>
                 </tr>
                 <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ESP 31500</td>
+                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ATESP 31000-32000</td>
                   <td className="py-4 px-6">220/240V 50Hz 1ph</td>
                   <td className="py-4 px-6">450 W</td>
                   <td className="py-4 px-6">14.4 m&sup3;/sec</td>
@@ -393,7 +403,7 @@ export default function App() {
                   <td className="py-4 px-6">360 kg</td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors bg-gray-50/50">
-                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ESP 42000</td>
+                  <td className="py-4 px-6 font-semibold text-[#004fa3]">ATESP 41500-42500</td>
                   <td className="py-4 px-6">220/240V 50Hz 1ph</td>
                   <td className="py-4 px-6">600 W</td>
                   <td className="py-4 px-6">19.2 m&sup3;/sec</td>
@@ -411,34 +421,30 @@ export default function App() {
       </section>
 
 
-
       {/* Footer / Bottom Banner */}
       <section className="bg-gradient-to-r from-[#001f40]/90 to-[#003366]/90 backdrop-blur-md text-white py-20 px-6 mt-auto z-10">
         <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24 items-start pl-0 lg:pl-12">
+
           <div className="flex items-start gap-6">
             <button className="bg-gradient-to-br from-[#004fa3] to-[#49a82e] p-3 rounded-sm mt-2.5 flex-shrink-0 hover:opacity-90 transition-opacity">
               <ArrowDown className="w-5 h-5 text-white" strokeWidth={2} />
             </button>
+
             <div className="flex flex-col items-start">
-              <div className="text-[36px] font-black tracking-tight flex items-center italic font-['Exo_2']">
-                <span className="text-white uppercase">Air</span>
-                <div className="mx-1 relative flex items-center justify-center rounded-full border-[3px] border-t-white border-l-white border-b-[#49a82e] border-r-[#49a82e] p-0.5 bg-gradient-to-br from-white to-gray-100 shadow-inner">
-                   <Fan className="w-6 h-6 text-gray-700 animate-[spin_4s_linear_infinite]" strokeWidth={2.5} />
-                </div>
-                <span className="text-[#085a21] uppercase bg-gradient-to-b from-[#60c418] to-[#044c21] text-transparent bg-clip-text">Take</span>
-              </div>
-              <div className="text-[9px] font-bold tracking-[0.2em] text-gray-300 mt-0.5 text-center w-full flex items-center justify-between font-['Exo_2']">
-                <div className="flex-grow h-[1px] bg-gradient-to-r from-transparent to-white mr-2"></div>
-                ENGINEERED AIR SOLUTIONS
-                <div className="flex-grow h-[1px] bg-gradient-to-l from-transparent to-[#49a82e] ml-2"></div>
-              </div>
+              <img
+                src={logoImage}
+                alt="AiroTAKE - Engineered Air Solutions"
+                className="w-[240px] h-auto object-contain"
+              />
             </div>
           </div>
+
           <div className="pt-4 pr-0 lg:pr-12">
             <p className="text-[14px] text-gray-300 leading-relaxed font-light">
               All leading restaurant brands use AiroTake products, and as a premier manufacturer of Commercial Kitchen Filtration equipment, we take great pride in knowing that our Commercial Kitchen Electrostatic Precipitators (ESP) are unrivalled.
             </p>
           </div>
+
         </div>
       </section>
     </div>
