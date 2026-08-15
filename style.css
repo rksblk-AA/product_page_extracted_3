@@ -55,6 +55,15 @@ select {
   font: inherit;
 }
 
+/* Code Inderjit */
+.ess-width {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 .container {
   width: min(var(--container), calc(100% - 32px));
   margin: 0 auto;
@@ -116,8 +125,8 @@ select {
 }
 
 .brand-mark {
-  width: 56px;
-  height: 56px;
+  width: 180px;
+  height: 85px;
   object-fit: contain;
 }
 
@@ -360,7 +369,7 @@ select {
 
 .hero-image {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 15 / 10;
   object-fit: cover;
   filter: saturate(1) contrast(1.08) brightness(0.96);
   background: #dfeaf7;
@@ -522,7 +531,7 @@ select {
 .process-step:not(:last-child)::after {
   content: "→";
   position: absolute;
-  right: -14px;
+  right: -20px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--blue-500);
@@ -899,9 +908,9 @@ select {
 }
 
 .footer-brand img {
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
+    width: 220px;
+    height: 100px;
+    BORDER-RADIUS: 20PX;
 }
 
 .footer-brand strong {
@@ -1029,5 +1038,380 @@ select {
 
   .section {
     padding: 72px 0;
+  }
+}
+/* =========================================================
+   AIRoTAKE - RESPONSIVE LAYOUT
+   Desktop / Laptop / Tablet / Mobile
+   ========================================================= */
+
+/* Prevent horizontal overflow */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Keep all main containers inside viewport */
+.container {
+  width: min(1180px, calc(100% - 40px));
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Flexible grids */
+.grid,
+.form-grid,
+.process-grid,
+.features-grid,
+.applications-grid,
+.metric-grid,
+.pollutant-grid,
+.why-grid {
+  min-width: 0;
+}
+
+.grid > *,
+.form-grid > *,
+.process-grid > *,
+.features-grid > *,
+.applications-grid > *,
+.metric-grid > *,
+.pollutant-grid > *,
+.why-grid > * {
+  min-width: 0;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  :root {
+    --container: 100%;
+  }
+
+  .container {
+    width: min(100% - 32px, 960px);
+  }
+
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .header-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .nav-wrap {
+    gap: 16px;
+  }
+
+  .site-nav {
+    gap: 18px;
+  }
+
+  .site-nav a {
+    font-size: 0.9rem;
+  }
+
+  .header-contacts {
+    gap: 12px;
+  }
+
+  .hero-grid,
+  .cta-box {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-strip,
+  .pollutant-grid,
+  .metric-grid,
+  .features-grid,
+  .applications-grid,
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE / SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 780px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  /* Header */
+  .header-inner {
+    min-height: 70px;
+    padding: 10px 14px;
+  }
+
+  .brand {
+    flex-shrink: 0;
+  }
+
+  .brand-mark {
+    width: 68px;
+    height: auto;
+  }
+
+  .nav-wrap {
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 14px;
+    right: 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: var(--shadow-card);
+    z-index: 1000;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .header-contacts {
+    display: none;
+  }
+
+  /* Main grids */
+  .hero-grid,
+  .cta-box,
+  .spec-strip,
+  .pollutant-grid,
+  .metric-grid,
+  .features-grid,
+  .applications-grid,
+  .why-grid,
+  .process-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.05;
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 6vw, 2.25rem);
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  /* Cards */
+  .card,
+  .feature-card,
+  .application-card,
+  .metric-card,
+  .why-card {
+    width: 100%;
+  }
+
+  /* Images */
+  .hero-image,
+  .product-image,
+  .section-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* CTA */
+  .cta-box {
+    gap: 24px;
+  }
+
+  /* Form */
+  .form-grid {
+    gap: 16px;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-logo {
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-grid > * {
+    min-width: 0;
+  }
+
+  /* Footer text */
+  footer p {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .container {
+    width: calc(100% - 22px);
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .header-inner {
+    min-height: 62px;
+    padding: 8px 10px;
+  }
+
+  .brand-mark {
+    width: 62px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.65rem;
+  }
+
+  .btn,
+  button {
+    max-width: 100%;
+  }
+
+  .cta-box {
+    padding: 22px;
+  }
+
+  .form-grid {
+    gap: 12px;
+  }
+
+  .footer-logo {
+    width: 105px;
+  }
+
+  .footer-grid {
+    gap: 24px;
+  }
+
+  /* Prevent long email / phone / URLs from breaking layout */
+  a,
+  p,
+  span {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .container {
+    width: calc(100% - 18px);
+  }
+
+  .header-inner {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .brand-mark {
+    width: 56px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 }
