@@ -447,8 +447,8 @@
                 <textarea id="message" name="Message" placeholder="Tell us about your kitchen exhaust or filtration requirement"></textarea>
               </div>
             </div>
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Submit Enquiry</button>
+            <div>
+              <button id="btnSubmit" onclick="validateFormClick()" class="btn btn-primary" type="submit">Submit Enquiry</button>
             </div>
           </form>
         </div>
@@ -485,6 +485,13 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      emailjs.init({
+        publicKey: "CqAbu-NDXqpB9BzR6"
+      });
+</script>
   </body>
 </html>
+
 
