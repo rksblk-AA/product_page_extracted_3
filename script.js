@@ -19,10 +19,11 @@ if (menuToggle && siteNav) {
 
 // Form ko default 'mailto:' kholne ya page reload karne se rokne ke liye
 const enquiryForm = document.querySelector('.enquiry-form');
+
 if (enquiryForm) {
-  enquiryForm.removeAttribute('action');
   enquiryForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    validateFormClick();
   });
 }
 
