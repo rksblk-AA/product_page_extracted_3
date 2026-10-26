@@ -408,7 +408,7 @@
             </div>
           </div>
 
-          <form class="enquiry-form" id="enquiryForm">
+          <form class="enquiry-form" onsubmit="return false;">
             <div class="form-grid">
               <div class="field">
                 <label for="name">Name</label>
@@ -448,7 +448,7 @@
               </div>
             </div>
             <div>
-              <button id="btnSubmit" class="btn btn-primary" type="submit">Submit Enquiry</button>
+            <button id="btnSubmit" onclick="validateFormClick(event)" class="btn btn-primary" type="button">Submit Enquiry</button>
             </div>
           </form>
         </div>
@@ -484,7 +484,7 @@
       <div class="container footer-bottom">© 2026 AIRoTAKE. Engineered Air Solutions.</div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
       emailjs.init({
