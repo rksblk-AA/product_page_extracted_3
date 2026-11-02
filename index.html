@@ -57,10 +57,10 @@
     </header>
 
     <main id="home">
-      <section class="hero">
+      <!-- <section class="hero">
         <div class="ess-width hero-grid">
           <div class="hero-copy">
-            <!-- <span class="eyebrow">Commercial Kitchen ESP</span> -->
+            <span class="eyebrow">Commercial Kitchen ESP</span>
             <h1>Commercial Air<br />Filtration<br />System</h1>
             <p class="hero-subheading">Advanced smoke, grease and oil-mist filtration for commercial air exhaust systems.</p>
             <p>
@@ -90,6 +90,48 @@
             </div>
           </div>
         </div>
+      </section> -->
+
+      
+      <section class="hero">
+          <div class="ess-width hero-grid">
+
+              <div class="hero-copy">
+
+                  <h1>Commercial Air<br />Filtration<br />System</h1>
+
+                  <p class="hero-subheading">
+                      Advanced smoke, grease and oil-mist filtration
+                      for commercial air exhaust systems.
+                  </p>
+
+                  <p>
+                      AIRoTAKE ESP systems are engineered for efficient
+                      particulate capture, modular installation and
+                      reliable operation across commercial air
+                      ventilation applications.
+                  </p>
+
+                  <div class="hero-actions">
+                      <a class="btn btn-primary" href="#solutions">
+                          Explore ESP Solutions
+                      </a>
+
+                      <a class="btn btn-secondary" href="#contact">
+                          Request a Quote
+                      </a>
+                  </div>
+
+                  <div class="spec-strip" aria-label="Product highlights">
+                      <div class="spec-item">High Efficiency</div>
+                      <div class="spec-item">Modular Design</div>
+                      <div class="spec-item">Low Pressure Drop</div>
+                      <div class="spec-item">Washable ESP Cells</div>
+                  </div>
+
+              </div>
+
+          </div>
       </section>
 
       <section class="section" id="about">
@@ -126,13 +168,13 @@
 
       <section class="section section-alt" >
         <div class="ess-width">
-          <div class="process-header">
-            <!-- <span class="eyebrow">What is ESP?</span> -->
+          <!-- <div class="process-header">
+            <span class="eyebrow">What is ESP?</span>
             <h2 class="section-title">Airotake ESP modular design for flexible airflow requirements</h2>
-          </div>
+          </div> -->
 
-          <div class="esp-intro-layout">
-            <div class="text-block">
+          <!-- <div class="esp-intro-layout"> -->
+            <!-- <div class="text-block">
               <p>
                 An Electrostatic Precipitator (ESP) is an air-cleaning technology that uses an electrostatic field to charge airborne particles and collect them on collector plates.
               </p>
@@ -148,12 +190,12 @@
                 <div class="pollutant">Odour</div>
                 <div class="pollutant">Fine Particles</div>
               </div>
-            </div>
+            </div> -->
 
             <div class="diagram-wrap">
-              <img src="assets/images/esp-cell-working-method.jpeg" alt="ESP collector cell working method diagram showing particle charging and collection" loading="lazy" style="object-fit: contain; width: 100%; height: 100%;" />
+              <img src="assets/images/esp-cell-working-method.png" alt="ESP collector cell working method diagram showing particle charging and collection" loading="lazy" style="object-fit: contain; width: 100%; height: 100%;" />
             </div>
-          </div>
+          <!-- </div> -->
         </div>
       </section>
 
@@ -267,6 +309,11 @@
               <p>Configuration can be adapted to project requirements.</p>
             </article>
           </div>
+
+          <div id="advantages-image" style="width: 100%; margin: 25px 0; padding: 0;">
+            <img src="assets/images/Advantages.png"
+              alt="AIROTAKE ESP model unit" loading="lazy" style="width: 100%; height: auto; display: block;" />
+        </div>
         </div>
       </section>
 
@@ -448,7 +495,7 @@
               </div>
             </div>
             <div>
-            <button id="btnSubmit" onclick="validateFormClick(event)" class="btn btn-primary" type="button">Submit Enquiry</button>
+            <button id="btnSubmit" onclick="validateFormClick(event)" class="btn btn-primary" type="button" style="margin-top:25px">Submit Enquiry</button>
             </div>
           </form>
         </div>
@@ -469,7 +516,7 @@
           <div class="footer-nav" aria-label="Footer navigation">
             <!-- <a href="#sectors">Sectors</a> -->
             <a href="#solutions">Solutions</a>
-            <a href="#servicing">Servicing</a>
+            <a href="#advantages-image">Servicing</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </div>
@@ -491,6 +538,39 @@
         publicKey: "CqAbu-NDXqpB9BzR6"
       });
 </script>
+<footer class="footer">
+      <!-- Footer content... -->
+    </footer>
+
+    <!-- 👉 YAHAN APNA CHATBOT HTML PASTE KAREIN (</body> se theek pehle) -->
+    <div id="airotake-chat-container">
+      <button id="airotake-chat-toggle" aria-label="Open Chat">💬</button>
+      
+      <div id="airotake-chat-window" class="chat-hidden">
+        <div class="chat-header">
+          <h4>AiroTake Bot</h4>
+          <button id="airotake-chat-close">&times;</button>
+        </div>
+        <div class="chat-body">
+          <p>Hi there! How can I help you with AiroTake Precipitators today?</p>
+        </div>
+        <div class="chat-footer">
+          <input type="text" id="chat-user-input" placeholder="Type a message..." />
+          <button id="chat-send-btn">Send</button>
+        </div>
+      </div>
+    </div>
+    <!-- ---------------------------------------------------- -->
+
+    <script src="script.js?v=2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      emailjs.init({
+        publicKey: "CqAbu-NDXqpB9BzR6"
+      });
+    </script>
+  </body>
+</html>
   </body>
 </html>
 
